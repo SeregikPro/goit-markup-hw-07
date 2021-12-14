@@ -10,14 +10,14 @@
   margin-bottom: -30px;
 }
 
-.about-item {
+.about-list__item {
   position: relative;
   flex-basis: calc(100% / 3 - 30px);
   margin-right: 30px;
   margin-bottom: 30px;
 }
 
-.about-item-title {
+.about-list__title {
   position: absolute;
   bottom: 0;
   left: 0;
