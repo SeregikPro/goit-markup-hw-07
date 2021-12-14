@@ -151,9 +151,7 @@ img {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.current-btn,
-.filter-btn:hover,
-.filter-btn:focus {
+.filter-btn.current-btn, .filter-btn:hover, .filter-btn:focus {
   color: var(--third-text-color);
   background-color: var(--accent-color);
   -webkit-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -185,8 +183,7 @@ img {
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.portfolio-link:hover,
-.portfolio-link:focus {
+.portfolio-link:hover, .portfolio-link:focus {
   -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
           box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
@@ -264,11 +261,6 @@ img {
   transition: opacity 300ms, visibility 300ms;
 }
 
-.backdrop.is-hidden .modal {
-  -webkit-transform: translate(-50%, -50%) scale(0.2);
-          transform: translate(-50%, -50%) scale(0.2);
-}
-
 .modal {
   position: absolute;
   top: 50%;
@@ -277,12 +269,18 @@ img {
           transform: translate(-50%, -50%) scale(1);
   width: 528px;
   min-height: 581px;
+  padding: 40px;
   background-color: var(--main-background-color);
   border-radius: 4px;
   -webkit-transition: -webkit-transform 300ms;
   transition: -webkit-transform 300ms;
   transition: transform 300ms;
   transition: transform 300ms, -webkit-transform 300ms;
+}
+
+.backdrop.is-hidden .modal {
+  -webkit-transform: translate(-50%, -50%) scale(0.2);
+          transform: translate(-50%, -50%) scale(0.2);
 }
 
 .modal-close {
@@ -318,10 +316,6 @@ img {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
-}
-
-.modal {
-  padding: 40px;
 }
 
 .modal-title {
@@ -364,6 +358,14 @@ img {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.modal-input:focus + .input-icon {
+  fill: var(--accent-color);
+}
+
+.modal-input:focus {
+  border-color: var(--accent-color);
+}
+
 .input-icon {
   position: absolute;
   top: 50%;
@@ -372,15 +374,6 @@ img {
   left: 12px;
   -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal-input:focus,
-.modal-comment:focus {
-  border-color: var(--accent-color);
-}
-
-.modal-input:focus + .input-icon {
-  fill: var(--accent-color);
 }
 
 .modal-comment-field {
@@ -399,6 +392,10 @@ img {
   resize: none;
   -webkit-transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-comment:focus {
+  border-color: var(--accent-color);
 }
 
 .modal-comment::-webkit-input-placeholder {
@@ -574,6 +571,10 @@ img {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.header-link:focus, .header-link:hover, .header-link:active {
+  color: var(--accent-color);
+}
+
 .header-contacts {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -592,19 +593,15 @@ img {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.header-contacts:focus, .header-contacts:hover {
+  color: var(--accent-color);
+}
+
 .contacts-icon {
   fill: var(--second-text-color);
   margin-right: 10px;
   -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.header-link:hover,
-.header-link:focus,
-.header-link:active,
-.header-contacts:hover,
-.header-contacts:focus {
-  color: var(--accent-color);
 }
 
 .header-contacts:hover .contacts-icon,
@@ -815,14 +812,13 @@ img {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.team-social-icon {
-  fill: currentColor;
-}
-
-.team-social-link:hover,
-.team-social-link:focus {
+.team-social-link:hover, .team-social-link:focus {
   background-color: var(--accent-color);
   color: var(--main-background-color);
+}
+
+.team-social-icon {
+  fill: currentColor;
 }
 
 .clients-list {
@@ -862,14 +858,13 @@ img {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.clients-icon {
-  fill: currentColor;
-}
-
-.clients-link:hover,
-.clients-link:focus {
+.clients-link:hover, .clients-link:focus {
   border-color: var(--accent-color);
   color: var(--accent-color);
+}
+
+.clients-icon {
+  fill: currentColor;
 }
 
 .footer {
@@ -926,6 +921,10 @@ img {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.address-link:focus, .address-link:hover {
+  color: var(--accent-color);
+}
+
 .contacts-link {
   font-style: normal;
   font-size: 14px;
@@ -936,10 +935,7 @@ img {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.address-link:hover,
-.address-link:focus,
-.contacts-link:hover,
-.contacts-link:focus {
+.contacts-link:focus, .contacts-link:hover {
   color: var(--accent-color);
 }
 
@@ -994,13 +990,12 @@ img {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.footer-social-icon {
-  fill: currentColor;
+.footer-social-link:hover, .footer-social-link:focus {
+  background-color: var(--accent-color);
 }
 
-.footer-social-link:hover,
-.footer-social-link:focus {
-  background-color: var(--accent-color);
+.footer-social-icon {
+  fill: currentColor;
 }
 
 .footer-form {
