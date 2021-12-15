@@ -919,7 +919,7 @@ img {
   color: var(--accent-color);
 }
 
-.contacts-list__link--address {
+.contacts-list__address {
   color: var(--third-text-color);
 }
 
